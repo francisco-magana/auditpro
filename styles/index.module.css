@@ -1,0 +1,15 @@
+.header {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    font-size: 28px;
+    padding: 14px;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    width: 100%;
+}

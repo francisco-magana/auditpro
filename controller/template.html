@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8" />
+                <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+                <link
+                        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+                        rel="stylesheet"
+                />
+
+                <title>Mi Documento</title>
+        </head>
+        <body>
+                <div style="text-align: right; font-size: 24px">
+                        <b style="font-size: 24px">Fecha: </b>{{this.date}}
+                </div>
+
+                <h1>Dictamen del equipo</h1>
+                <p>
+                        El presente documento fue generado automaticamente en base a la
+                        auditoria realizada al equipo. El resultado de este analisis da pie
+                        a la inferencia de resultados del estado del equipo de acuerdo a los
+                        parametros establecidos.
+                </p>
+
+                <h3>Detalles del Equipo</h3>
+
+                <table>
+                        <thead>
+                                <th>Nombre del equipo</th>
+                                <th>SO</th>
+                                <th>Fabricante</th>
+                                <th>RAM</th>
+                                <th>Usuario</th>
+                                <th>Almacenamiento</th>
+                        </thead>
+                        <tbody>
+                                <tr>
+                                        <td>{{this.info.general.equipo}}</td>
+                                        <td>{{this.info.general.SO}}</td>
+                                        <td>{{this.info.general.fabricante}}</td>
+                                        <td>{{this.info.general.RAM}}</td>
+                                        <td>{{this.info.general.usuario}}</td>
+                                        <td>{{this.info.general.almacenamiento}}</td>
+                                </tr>
+                        </tbody>
+                </table>
+
+                <h3>Detalles del Procesador</h3>
+
+                <table>
+                        <thead>
+                                <th>Numero de procesadores</th>
+                                <th>Procesador</th>
+                                <th>Fabricante</th>
+                        </thead>
+                        <tbody>
+                                <tr>
+                                        <td>{{this.info.procesador.numeroProcesadores}}</td>
+                                        <td>{{this.info.procesador.procesador}}</td>
+                                        <td>{{this.info.procesador.fabricante}}</td>
+                                </tr>
+                        </tbody>
+                </table>
+
+                <h3>Detalles del Almacenamiento Principal</h3>
+
+                <table>
+                        <thead>
+                                <th>Almacenamiento Total</th>
+                                <th>Almacenamiento Disponible</th>
+                                <th>Almacenamiento Ocupado</th>
+                                <th>Porcentaje Ocupado</th>
+                                <th>Tipo</th>
+                                <th>Formato</th>
+                        </thead>
+                        <tbody>
+                                <tr>
+                                        <td>{{this.info.discoC.almacenamientoTotal}}</td>
+                                        <td>{{this.info.discoC.almacenamientoDisponible}}</td>
+                                        <td>{{this.info.discoC.almacenamientoOcupado}}</td>
+                                        <td>{{this.info.discoC.porcentajeLlenado}}</td>
+                                        <td>{{this.info.discoC.tipo}}</td>
+                                        <td>{{this.info.discoC.formato}}</td>
+                                </tr>
+                        </tbody>
+                </table>
+
+                <h1>Resultado del análsis</h1>
+                <div style="font-size: 60px; color: darkgray">
+                        {{this.dictamen.resultado}}
+                </div>
+                <div style="font-size: 30px; color: darkgray">
+                        {{this.dictamen.puntos}} Puntos
+                </div>
+
+                <h1>Recomendaciones</h1>
+                <ul>
+                        {{#each dictamen.recomendaciones}}
+                        <li>{{this.data}}</li>
+                        {{/each}}
+                </ul>
+
+                <p>
+                        El resultado mostrado en el presente documento se tomó de acuerdo a
+                        las siguientes consideraciones. Es necesario revisarlos de y
+                        compararlos para que se pueda tomar una decisión de acción:
+                </p>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <table>
+                        <thead>
+                                <th>Puntos</th>
+                                <th>RAM</th>
+                                <th>Espacio usado</th>
+                                <th>Espacio total</th>
+                                <th>Numero Procesadores</th>
+                        </thead>
+                        <tbody>
+                                <tr>
+                                        <td>5 Excelente</td>
+                                        <td>>12GB</td>
+                                        <td>&lt;10%</td>
+                                        <td>>1024 GB</td>
+                                        <td>>8</td>
+                                </tr>
+                                <tr>
+                                        <td>4 Bueno</td>
+                                        <td>>8Gb</td>
+                                        <td>10% - 25%</td>
+                                        <td>512 GB - 1024 GB</td>
+                                        <td>4 - 8</td>
+                                </tr>
+                                <tr>
+                                        <td>3 Regular</td>
+                                        <td>>4GB</td>
+                                        <td>25% - 50%</td>
+                                        <td>256 GB - 512 GB</td>
+                                        <td>2 - 4</td>
+                                </tr>
+                                <tr>
+                                        <td>2 Mejorable</td>
+                                        <td>>2GB</td>
+                                        <td>50% - 75%</td>
+                                        <td>128 GB - 256 GB</td>
+                                        <td>2</td>
+                                </tr>
+                                <tr>
+                                        <td>1 Malo</td>
+                                        <td>&lt;2GB</td>
+                                        <td>75% - 100%</td>
+                                        <td>&lt;128GB</td>
+                                        <td>1</td>
+                                </tr>
+                        </tbody>
+                </table>
+
+                <h1>REVISIONES Y AUTORIZACIONES</h1>
+                Se presenta el dictamen de acuerdo a los lineamientos mencionados.
+                Firmar de autorizado y revisado para confirmar los resultados y
+                continuar con el proceso de auditoría del equipo.
+
+                <h1>Firmas</h1>
+                <div
+                        style="
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                        "
+                >
+                        <br />
+                        <br />
+                        <div style="width: 40%">
+                                <hr />
+                                Autorizado
+                        </div>
+                        <br />
+                        <br />
+                        <div style="width: 40%">
+                                <hr />
+                                Revisado
+                        </div>
+                </div>
+
+                <style>
+                        * {
+                                font-family: 'Montserrat';
+                                font-size: 18px;
+                        }
+
+                        h1 {
+                                font-size: 20px;
+                        }
+
+                        table {
+                                width: 100%;
+                        }
+
+                        th,
+                        td {
+                                width: 25%;
+                                text-align: left;
+                                vertical-align: top;
+                                border-collapse: collapse;
+                                padding: 0.3em;
+                                caption-side: bottom;
+                        }
+
+                        caption {
+                                padding: 0.3em;
+                                /* color: #fff; */
+                                background: #000;
+                        }
+
+                        th {
+                                background: rgb(0, 0, 0);
+                                color: white;
+                        }
+                </style>
+        </body>
+</html>
