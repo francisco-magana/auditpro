@@ -9,7 +9,7 @@ const handler = async(req, res) => {
     const dictamen = controller.generarDictamen(analisis);
     await controller.generarPDF(dictamen, analisis);
 
-    res.json(
+    return res.json(
         {
             ok: true
         }
